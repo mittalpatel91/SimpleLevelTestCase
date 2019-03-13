@@ -120,7 +120,7 @@ public class CreateRetailOrder_POM {
 		    driver.switchTo().window(handle);
 		    }
 		}          	
-		 
+		Thread.sleep(3000);
 		this.addtocartbtn.click();
 		Thread.sleep(5000);
 		this.cart.click();
