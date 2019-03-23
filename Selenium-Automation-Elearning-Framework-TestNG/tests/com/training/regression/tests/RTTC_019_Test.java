@@ -46,7 +46,7 @@ public class RTTC_019_Test {
 		driver.quit();
 	}
 	@Test
-	public void deleteOrdersTest() {
+	public void deleteReturnsTest() {
 		rttc019.sendUserName("admin");
 		rttc019.sendPassword("admin@123");
 		rttc019.clickLoginBtn(); 

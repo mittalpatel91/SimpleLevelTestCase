@@ -46,7 +46,7 @@ public class RTTC_018_Test {
 		driver.quit();
 	}
 	@Test
-	public void fileterOrdersTest() {
+	public void fileterReturnsTest() {
 		rttc018.sendUserName("admin");
 		rttc018.sendPassword("admin@123");
 		rttc018.clickLoginBtn(); 

@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.regression.tests.CreateRetailOrder_Test">
+      <class name="com.training.regression.tests.RTTC_046_Test">
         <methods>
-          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="createOrderTest"/>
+          <include name="editOrderTest"/>
           <include name="setUpBeforeClass"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.training.regression.tests.CreateRetailOrder_Test -->
+      </class> <!-- com.training.regression.tests.RTTC_046_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

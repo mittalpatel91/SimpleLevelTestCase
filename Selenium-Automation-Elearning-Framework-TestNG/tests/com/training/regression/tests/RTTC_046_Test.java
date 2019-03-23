@@ -11,15 +11,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.RTTC_020_POM;
+import com.training.pom.RTTC_046_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RTTC_020_Test {
+public class RTTC_046_Test {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private RTTC_020_POM rttc020;
+	private RTTC_046_POM rttc046;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -33,7 +33,7 @@ public class RTTC_020_Test {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		rttc020 = new RTTC_020_POM(driver); 
+		rttc046 = new RTTC_046_POM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -46,18 +46,20 @@ public class RTTC_020_Test {
 		driver.quit();
 	}
 	@Test
-	public void fileterOrdersTest() throws InterruptedException {
-		rttc020.sendUserName("admin");
-		rttc020.sendPassword("admin@123");
-		rttc020.clickLoginBtn(); 
-		rttc020.selectCust();
-		rttc020.sendCustNm("Mittal Patel");
-		rttc020.clickFilterBtn();
-		screenShot.captureScreenShot("FilterOrderbyName");
-		Thread.sleep(3000);
-		rttc020.selectCust();
-		rttc020.sendEmail("mittalpatel@gmail.com");
-		rttc020.clickFilterBtn();
-		screenShot.captureScreenShot("FilterOrderbyEmail");
+	public void editOrderTest() throws InterruptedException {
+		rttc046.sendUserName("admin");					//Enter user-name
+		rttc046.sendPassword("admin@123");				//Enter password
+		rttc046.clickLoginBtn(); 						//Click login button 
+
+		rttc046.selectOrders();							//Select Orders from Sales menu
+		rttc046.sendCustomerName("Mittal Patel");		//Enter Customer name to filter order list
+		rttc046.clickFilterBtn();						//Click on filter button
+		screenShot.captureScreenShot("OriginalOrder");	//Capture Screenshot for Original Order
+		Thread.sleep(2000);		
+		
+		rttc046.clickEditBtn();							//Click on edit button
+		rttc046.editOrder();							//Edit order
+		rttc046.verifyMsg(); 							//Verify Success Message
+		screenShot.captureScreenShot("UpdatedOrder");	//Capture Screenshot for Updated Order
 	}
 }

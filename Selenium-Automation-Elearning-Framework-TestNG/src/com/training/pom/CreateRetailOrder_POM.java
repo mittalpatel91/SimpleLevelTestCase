@@ -47,7 +47,7 @@ public class CreateRetailOrder_POM {
 		this.loginBtn.click(); 
 	}
 
-	@FindBy(xpath="//i[@class='fa fa-home']")
+	@FindBy(xpath="//span[contains(text(),'Home')]")
 	private WebElement home;
 
 	public void clickHome() {
@@ -65,10 +65,10 @@ public class CreateRetailOrder_POM {
 	}
 
 
-	@FindBy(xpath="//span[contains(text(),'Shop Now')]")
+	@FindBy(xpath="//span[contains(text(),'Shop')]")
 	private WebElement shopnow;
 
-	@FindBy(xpath="//span[contains(text(),'Ethnic')]")
+	@FindBy(xpath="//span[contains(text(),'Earrings')]")
 	private WebElement option;
 
 	public void selectOption() {
@@ -77,7 +77,7 @@ public class CreateRetailOrder_POM {
 	}
 
 //	@FindBy(xpath="//a[contains(text(),'Integer vitae iaculis massa')]")
-	@FindBy(xpath="//a[@href='http://retail.upskills.in/ethnic/integer-vitae-iaculis-massa']//span//span//img[contains(@class,'lazyloaded')]")
+	@FindBy(xpath="//a[contains(text(),'Suspendisse ultrices mi nisl')]")
 	private WebElement product;
 		
 	@FindBy(id="button-cart")
@@ -120,9 +120,11 @@ public class CreateRetailOrder_POM {
 		    driver.switchTo().window(handle);
 		    }
 		}          	
-		Thread.sleep(3000);
-		this.addtocartbtn.click();
 		Thread.sleep(5000);
+		this.addtocartbtn.click();
+		Thread.sleep(250);
+		this.addtocartbtn.click();
+		Thread.sleep(8000);
 		this.cart.click();
 		this.checkoutbtn.click();
 		this.step2Continuebtn.click();
