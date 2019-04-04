@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.training.bean.DBBean;
+import com.training.bean.DBBean_Proj;
 
 /**
  * 
@@ -14,14 +14,14 @@ import com.training.bean.DBBean;
  * @see will load the db details and shall be used in connection class
  */
 public class LoadDBDetails {
-	public static DBBean getDBDetails() {
+	public static DBBean_Proj getDBDetails() {
 
 		try {
 			Properties properties = new Properties();
 			FileInputStream inStream = new FileInputStream("./resources/db.properties");
 			properties.load(inStream);
 
-			DBBean dbBean = new DBBean(); 
+			DBBean_Proj dbBean = new DBBean_Proj(); 
 			
 			dbBean.setUrl(properties.getProperty("url"));
 			dbBean.setDriver(properties.getProperty("driver"));
